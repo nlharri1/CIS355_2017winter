@@ -3,6 +3,7 @@
 
  session_start();
 //connect to database
+
 $db=mysqli_connect("localhost","nlharri1","537858","nlharri1");
 
 ?>
