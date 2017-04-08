@@ -87,7 +87,7 @@
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Update a Customer</h3>
+		    			<h3>Update Profile</h3>
 		    		</div> 		
 	    			<form class="form-horizontal"  method="post">
 					  <div class="control-group <?php echo !empty($first_nameError)?'error':'';?>">
