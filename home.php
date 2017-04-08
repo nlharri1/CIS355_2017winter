@@ -1,10 +1,28 @@
 <?php
 //I am building the program this weekend 4/7/2016
+session_start();
+print_r(array_values($_SESSION));
+    if ( !empty($_POST)) {
+		if(isset($_POST['takeQuiz']))
+		{
+			header("Location: index.php"); 
+		}
+		elseif(isset($_POST['compareResults']))
+		{
+			header("Location: index.php"); 
+		}
+		elseif(isset($_POST['editProfile']))
+		{
+			header("Location: update_profile.php?id=". $_SESSION['test_taker_id']); 
+		}
+		else
+		{
+			header("Location: logout.php"); 
+		}
+	}
 
- session_start();
-//connect to database
 
-$db=mysqli_connect("localhost","nlharri1","537858","nlharri1");
+
 
 ?>
 <!DOCTYPE html>
@@ -36,6 +54,7 @@ $db=mysqli_connect("localhost","nlharri1","537858","nlharri1");
 
 <br/>
 <br/>
+	<form class="form-horizontal" method="post">
 <div class="row">
 <div class="col-lg-3"></div>
 <div class="col-lg-9">
@@ -70,7 +89,7 @@ $db=mysqli_connect("localhost","nlharri1","537858","nlharri1");
 	
 </div>
 </div>
-
+</form>
 
 <br/>
 <br/>
