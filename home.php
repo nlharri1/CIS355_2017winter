@@ -16,9 +16,13 @@ $db=mysqli_connect("localhost","nlharri1","537858","nlharri1");
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="header">
-    <h1>Prepare Yourself</h1>
-</div>
+<div class="container">
+<div  class="row">
+	<div class="col-lg-1"></div>
+
+  <div class="col-lg-11"><h1>Welcome <?php echo $_SESSION['username']; ?>, Are you ready for the Ultimate Quiz?!</h1></div>
+	</div>
+
 <?php
 	
 
@@ -30,24 +34,47 @@ $db=mysqli_connect("localhost","nlharri1","537858","nlharri1");
 ?>
 
 
-<div>
-    <h4>Welcome <?php echo $_SESSION['username']; ?>, Are you ready for the Ultimate Quiz?!</h4></div>
-</div>
-<div>
-	<table>
-	<tr>
-		<td><a href="">Play</a></td>
-	</tr>
-	<tr>
-		<td><a href="">Compare Results</a></td>
-	</tr>
-	<tr>
-		<td><a href="">Edit Profile </a></td> 
-	</tr>
-	 </table>
-</div>
 <br/>
 <br/>
-<a href="logout.php">Log Out</a>
+<div class="row">
+<div class="col-lg-3"></div>
+<div class="col-lg-9">
+
+
+<button type="submit" name="takeQuiz" class="btn btn-success" style="height:40px; width:400px;">Take the Quiz</button>
+
+</div>
+</div>
+
+<br/>
+<div class="row">
+<div class="col-lg-3"></div>
+<div class="col-lg-9">
+<button type="submit" name="compareResults" class="btn btn-success" style="height:40px; width:400px;">Compare Results</button>
+
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-lg-3"></div>
+<div class="col-lg-9" >
+<button type="submit" name="editProfile" class="btn btn-success" style="height:40px; width:400px;">Edit  Profile</button>
+	
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-lg-3"></div>
+<div class="col-lg-9">
+<button type="submit" name="logOut" class="btn btn-success" style="height:40px; width:400px;">Log Out</button>
+	
+</div>
+</div>
+
+
+<br/>
+<br/>
+
+</diV>
 </body>
 </html>
