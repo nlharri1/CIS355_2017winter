@@ -50,7 +50,10 @@
 				$sql = "UPDATE Test_Takers  set first_name = ?, last_name = ?, username =? WHERE test_taker_id= ?";
 				$q = $pdo->prepare($sql);
 				$q->execute(array($first_name,$last_name,$username,$id));
+
+				$_SESSION['username'] = $username;
 				Database::disconnect();
+
 				header("Location: home.php");
 			}
 		}
@@ -87,18 +90,29 @@
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Update Profile</h3>
+
+						<div class="col-lg-12" style="text-align:center;">
+							<h1>Update Profile</h1>
+						</div>
 		    		</div> 		
 	    			<form class="form-horizontal"  method="post">
-					  <div class="control-group <?php echo !empty($first_nameError)?'error':'';?>">
-					    <label class="control-label">First Name :</label>
-					    <div class="controls">
-					      	<input name="first_name" type="text"  placeholder="first name" value="<?php echo !empty($first_name)?$first_name:'';?>">
-					      	<?php if (!empty($first_nameError)): ?>
-					      		<span class="help-inline"><?php echo $first_nameError;?></span>
-					      	<?php endif; ?>
-					    </div>
-					  </div>
+					<div class="row">
+						<div class="col-lg-5"></div>
+						<div class="col-lg-7">
+						  <div class="control-group <?php echo !empty($first_nameError)?'error':'';?>">
+							<label class="control-label">First Name :</label>
+							<div class="controls">
+								<input name="first_name" type="text"  placeholder="first name" value="<?php echo !empty($first_name)?$first_name:'';?>">
+								<?php if (!empty($first_nameError)): ?>
+									<span class="help-inline"><?php echo $first_nameError;?></span>
+								<?php endif; ?>
+							</div>
+						  </div>
+						  </div>
+					</div>
+					<div class="row">
+						<div class="col-lg-5"></div>
+						<div class="col-lg-7">					
 					  <div class="control-group <?php echo !empty($last_nameError)?'error':'';?>">
 					    <label class="control-label">Last Name :</label>
 					    <div class="controls">
@@ -108,6 +122,11 @@
 					      	<?php endif;?>
 					    </div>
 					  </div>
+					</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-5"></div>
+						<div class="col-lg-7">					
 					  <div class="control-group <?php echo !empty($usernameError)?'error':'';?>">
 					    <label class="control-label">Username :</label>
 					    <div class="controls">
@@ -117,10 +136,23 @@
 					      	<?php endif;?>
 					    </div>
 					  </div>
+					  </div>
+					</div>
+					<br/>
+
+					<div class="row">
+
+						<div class="col-lg-5"></div>
+						
 					  <div class="form-actions">
-						  <button type="submit" name="update" class="btn btn-success">Update</button>
-						  <button type="submit" name="back"class="btn btn-success">Back</button>
+					  <div class="col-lg-1">	
+						  <button type="submit" name="update" class="btn btn-success" style="height:30px; width:80px;">Update</button>
+					  </div>
+					   <div class="col-lg-6">
+						  <button type="submit" name="back"class="btn btn-success" style="height:30px; width:80px;">Back</button>
 						</div>
+						</div>
+					</div>
 					</form>
 				</div>
 				
