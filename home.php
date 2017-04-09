@@ -1,7 +1,7 @@
 <?php
 //I am building the program this weekend 4/7/2016
 session_start();
-print_r(array_values($_SESSION));
+
     if ( !empty($_POST)) {
 		if(isset($_POST['takeQuiz']))
 		{
@@ -15,9 +15,13 @@ print_r(array_values($_SESSION));
 		{
 			header("Location: update_profile.php?id=". $_SESSION['test_taker_id']); 
 		}
-		elseif(isset($_POST['createQuestions']))
+		elseif(isset($_POST['createQuiz']))
 		{
-			header("Location: create_questions.php"); 
+			header("Location: create_quiz.php"); 
+		}
+		elseif(isset($_POST['manageQuiz']))
+		{
+			header("Location: manage_quiz.php"); 
 		}
 		else
 		{
@@ -89,7 +93,15 @@ print_r(array_values($_SESSION));
 <div class="row">
 <div class="col-lg-3"></div>
 <div class="col-lg-9">
-<button type="submit" name="createQuestions" class="btn btn-success" style="height:40px; width:400px;">Create Questions</button>
+<button type="submit" name="createQuiz" class="btn btn-success" style="height:40px; width:400px;">Create Quiz</button>
+	
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-lg-3"></div>
+<div class="col-lg-9">
+<button type="submit" name="manageQuiz" class="btn btn-success" style="height:40px; width:400px;">Manage Quiz</button>
 	
 </div>
 </div>

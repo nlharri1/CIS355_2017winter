@@ -43,7 +43,7 @@
 				$fail = "<h4>Transaction Failed!</h4>";
 			}
 		}
-		else
+		elseif(isset($_POST['back']))
 		{
 			header("Location: home.php"); 
 		}
@@ -61,8 +61,6 @@
 
 <body>
     <div class="container">
-    
-    
     				<div class="row">
 						<div class="col-lg-4"></div>
 						<div class="col-lg-8">
@@ -122,6 +120,34 @@
 						</div>
 						</div>
 					</div>
+					<br/>
+					<br/>
+					<br/>
+										<div class="row">
+						<div class="col-lg-4"> </div>
+						<div class="col-lg-8">	
+						<h3>Questions in the Quiz</h3>
+						</div>
+						</div>
+					 <div class="row">
+							<div class="col-lg-4"></div>
+							<div class="col-lg-8">
+							<?php
+									$pdo = Database::connect();
+									$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+									$sql = "SELECT * FROM Questions";
+									$q = $pdo->prepare($sql);
+									$q->execute();
+									$results = $q->fetchALL(PDO::FETCH_ASSOC); 
+									foreach($results as $rows)
+									{
+										echo "<h4>".$rows['question_id']." ".$rows['question_name']. " ".$rows['question_answer']."</h4>";
+									}
+									Database::disconnect();
+							?>
+							</div>
+						</div> 		
+    
 					</form>
 			
 				
