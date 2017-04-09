@@ -62,15 +62,15 @@
 <body>
     <div class="container">
     				<div class="row">
-						<div class="col-lg-4"></div>
-						<div class="col-lg-8">
+						<div class="col-lg-4  col-xs-3"></div>
+						<div class="col-lg-8  col-xs-9">
 							<h1>Create Questions For Quiz</h1>
 						</div>
 		    		</div> 		
 	    			<form class="form-horizontal"  method="post">
 					<div class="row">
-						<div class="col-lg-3"></div>
-						<div class="col-lg-9">
+						<div class="col-lg-3  col-xs-1"></div>
+						<div class="col-lg-9  col-xs-11">
 						  <div class="control-group <?php echo !empty($question_nameError)?'error':'';?>">
 							<label class="control-label">Question :</label>
 							<div class="controls">
@@ -83,8 +83,8 @@
 						  </div>
 					</div>
 					<div class="row">
-						<div class="col-lg-3"></div>
-						<div class="col-lg-9">					
+						<div class="col-lg-3  col-xs-1"></div>
+						<div class="col-lg-9  col-xs-11">					
 					  <div class="control-group <?php echo !empty($question_answerError)?'error':'';?>">
 					    <label class="control-label">Answer:</label>
 					    <div class="controls">
@@ -97,25 +97,25 @@
 					</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-3"> </div>
-						<div class="col-lg-7" style="text-align:center;">	
+						<div class="col-lg-3  col-xs-1"> </div>
+						<div class="col-lg-7  col-xs-11" style="text-align:center;">	
 							<?php echo $prompt;?>
 							<?php echo $complete;?>
 							<?php echo $fail;?>
 						</div>
-						<div class="col-lg-2"> </div>
+						<div class="col-lg-2 "> </div>
 					</div>
 					<br/>
 					<br/>
 					<div class="row">
 
-						<div class="col-lg-4"></div>
+						<div class="col-lg-4  col-xs-3"></div>
 						
 					  <div class="form-actions">
-					  <div class="col-lg-3">	
+					  <div class="col-lg-3  col-xs-3">	
 						  <button type="submit" name="create" class="btn btn-success" style="height:30px; width:150px;">Create Question</button>
 					  </div>
-					   <div class="col-lg-5">
+					   <div class="col-lg-5 col-xs-6">
 						  <button type="submit" name="back"class="btn btn-success" style="height:30px; width:150px;">Back</button>
 						</div>
 						</div>
@@ -124,14 +124,14 @@
 					<br/>
 					<br/>
 										<div class="row">
-						<div class="col-lg-4"> </div>
-						<div class="col-lg-8">	
-						<h3>Questions in the Quiz</h3>
+						<div class="col-lg-4  col-xs-3"> </div>
+						<div class="col-lg-8  col-xs-9">	
+						<h3>Questions in the Quiz:</h3>
 						</div>
 						</div>
 					 <div class="row">
-							<div class="col-lg-4"></div>
-							<div class="col-lg-8">
+							<div class="col-lg-4  col-xs-3"></div>
+							<div class="col-lg-8  col-xs-9">
 							<?php
 									$pdo = Database::connect();
 									$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

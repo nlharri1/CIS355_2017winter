@@ -44,28 +44,17 @@ session_start();
 <body>
 <div class="container">
 <div  class="row">
-	<div class="col-lg-1"></div>
+	<div class="col-lg-2 col-xs-1"></div>
 
-  <div class="col-lg-11"><h1>Welcome <?php echo $_SESSION['username']; ?>, Are you ready for the Ultimate Quiz?!</h1></div>
+  <div class="col-lg-10 col-xs-11"><h1>Are you ready for the Ultimate Quiz?!</h1></div>
 	</div>
-
-<?php
-	
-
-    if(isset($_SESSION['message']))
-    {
-         echo "<div id='error_msg'>".$_SESSION['message']."</div>";
-         unset($_SESSION['message']);
-    }
-?>
-
 
 <br/>
 <br/>
 	<form class="form-horizontal" method="post">
 <div class="row">
-<div class="col-lg-3"></div>
-<div class="col-lg-9">
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9">
 
 
 <button type="submit" name="takeQuiz" class="btn btn-success" style="height:40px; width:400px;">Take the Quiz</button>
@@ -75,40 +64,40 @@ session_start();
 
 <br/>
 <div class="row">
-<div class="col-lg-3"></div>
-<div class="col-lg-9">
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9">
 <button type="submit" name="compareResults" class="btn btn-success" style="height:40px; width:400px;">Compare Results</button>
 
 </div>
 </div>
 <br/>
 <div class="row">
-<div class="col-lg-3"></div>
-<div class="col-lg-9" >
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9" >
 <button type="submit" name="editProfile" class="btn btn-success" style="height:40px; width:400px;">Edit  Profile</button>
 	
 </div>
 </div>
 <br/>
 <div class="row">
-<div class="col-lg-3"></div>
-<div class="col-lg-9">
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9">
 <button type="submit" name="createQuiz" class="btn btn-success" style="height:40px; width:400px;">Create Quiz</button>
 	
 </div>
 </div>
 <br/>
 <div class="row">
-<div class="col-lg-3"></div>
-<div class="col-lg-9">
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9">
 <button type="submit" name="manageQuiz" class="btn btn-success" style="height:40px; width:400px;">Manage Quiz</button>
 	
 </div>
 </div>
 <br/>
 <div class="row">
-<div class="col-lg-3"></div>
-<div class="col-lg-9">
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9">
 <button type="submit" name="logOut" class="btn btn-success" style="height:40px; width:400px;">Log Out</button>
 	
 </div>

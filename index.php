@@ -64,13 +64,13 @@ session_start();
     
     			
     				<div class="row">
-					<div class="col-lg-2"></div>
+					<div class="col-lg-3 col-xs-1"></div>
 						
-							<div class="col-lg-10">	<h1>Can You Master the Ultimate Quiz?</h1></div> 
+							<div class="col-lg-9 col-xs-11">	<h1>Can You Master the Ultimate Quiz?</h1></div> 
 				</div>
 				<div class="row">
-				<div class="col-lg-4"></div>
-				<div class="col-lg-8">
+				<div class="col-lg-5 col-xs-4"></div>
+				<div class="col-lg-7 col-xs-8">
 	    			<form class="form-horizontal" method="post">
 					  <div class="control-group <?php echo !empty($usernameError)?'error':'';?>">
 					    <label class="control-label">User Name</label>
@@ -81,8 +81,14 @@ session_start();
 					      	<?php endif; ?>
 					    </div>
 					  </div>
+					    </div>
+						</div>
+						<div class="row">
+						<div class="col-lg-5 col-xs-4"></div>
+						 <div class="col-lg-7 col-xs-8">
 					  <div class="control-group <?php echo !empty($password)?'error':'';?>">
-					    <label class="control-label">Password</label>
+					   
+						<label class="control-label">Password</label>
 					    <div class="controls">
 					      	<input name="password" type="password" placeholder="Password" value="<?php echo !empty($password)?$password:'';?>">
 					      	<?php if (!empty($passwordError)): ?>
@@ -90,19 +96,22 @@ session_start();
 					      	<?php endif;?>
 					    </div>
 					  </div>
-					  <br/>
 					  </div>
-
+		
 				</div>
+							  <br/>
+					<br/>
+
 					<div class="row">
 					  <div class="form-actions">
-					  <div class="col-lg-4"></div>
-					  <div class="col-lg-1">
-					  	<button type="submit" name="signIn" class="btn btn-success">Sign In</button>
+					  <div class="col-lg-4 col-xs-3"></div>
+					  <div class="col-lg-2 col-xs-3">
+					  	<button style="width:100%;" type="submit" name="signIn" class="btn btn-success">Sign In</button>
 						 </div>
-		  <div class="col-lg-7">
-						<button type ="submit" name="regester" class="btn btn-success">Register</button>
+					<div class="col-lg-2 col-xs-3">
+						<button style="width:100%;"  type ="submit" name="regester" class="btn btn-success">Register</button>
 					 </div>
+					  <div class="col-lg-4 col-xs-3"></div>
 					 </div>
 					</form>
 				</div>
