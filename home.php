@@ -15,6 +15,10 @@ print_r(array_values($_SESSION));
 		{
 			header("Location: update_profile.php?id=". $_SESSION['test_taker_id']); 
 		}
+		elseif(isset($_POST['createQuestions']))
+		{
+			header("Location: create_questions.php"); 
+		}
 		else
 		{
 			header("Location: logout.php"); 
@@ -85,10 +89,19 @@ print_r(array_values($_SESSION));
 <div class="row">
 <div class="col-lg-3"></div>
 <div class="col-lg-9">
+<button type="submit" name="createQuestions" class="btn btn-success" style="height:40px; width:400px;">Create Questions</button>
+	
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-lg-3"></div>
+<div class="col-lg-9">
 <button type="submit" name="logOut" class="btn btn-success" style="height:40px; width:400px;">Log Out</button>
 	
 </div>
 </div>
+
 </form>
 
 <br/>

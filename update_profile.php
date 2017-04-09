@@ -26,7 +26,7 @@
 			$username=($_POST['username']);
 
 			
-			// validate input
+		
 			$valid = true;
 			if (empty($first_name)) {
 				$first_nameError = 'Please enter First Name';
@@ -88,7 +88,7 @@
 <body>
     <div class="container">
     
-    			<div class="span10 offset1">
+    
     				<div class="row">
 
 						<div class="col-lg-12" style="text-align:center;">
@@ -154,7 +154,7 @@
 						</div>
 					</div>
 					</form>
-				</div>
+			
 				
     </div> <!-- /container -->
   </body>
