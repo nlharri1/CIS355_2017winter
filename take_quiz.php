@@ -46,10 +46,6 @@
 				$fail = "<h4>Transaction Failed!</h4>";
 			}
 		}
-		elseif(isset($_POST['back']))
-		{
-			header("Location: home.php"); 
-		}
 	}
 ?>
 
