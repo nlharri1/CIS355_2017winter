@@ -1,11 +1,24 @@
 <?php
+require 'database.php';
 //I am building the program this weekend 4/7/2016
 session_start();
-
+	
+	$pdo = Database::connect();
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$sql = "SELECT count(*) AS Count FROM information_schema.columns WHERE table_name = 'Questions'";
+	$q = $pdo->prepare($sql);
+	$q->execute();
+	$results = $q->fetch(PDO::FETCH_ASSOC); 
+	echo $results['Count'];
+	Database::disconnect();
+	 $_SESSION['numOfQuestions'] = $results['Count'];
+	echo $_SESSION['questionPositon'] = 1;
+	echo $_SESSION['numOfQuestions'];
+	
     if ( !empty($_POST)) {
 		if(isset($_POST['takeQuiz']))
 		{
-			header("Location: index.php"); 
+			header("Location: take_quiz.php"); 
 		}
 		elseif(isset($_POST['compareResults']))
 		{

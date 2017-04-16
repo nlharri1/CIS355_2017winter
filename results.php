@@ -126,7 +126,7 @@
 										<div class="row">
 						<div class="col-lg-3  col-xs-3"> </div>
 						<div class="col-lg-9  col-xs-9">	
-						<h3>Questions in the Quiz:</h3>
+						<h3>Results:</h3>
 						</div>
 						</div>
 					 <div class="row">
