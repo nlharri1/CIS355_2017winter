@@ -35,8 +35,17 @@ session_start();
 					if($results['password']== md5($password)) { 
 						$_SESSION['test_taker_id'] = $results['test_taker_id']; 
 						$_SESSION['username'] = $results['username'];
+						$_SESSION['teacher'] = $results['teacher'];
 						Database::disconnect(); 
-						header("Location: home.php"); // redirect 
+						if($results['teacher'] == 1)
+						{
+							header("Location: teacher_home.php"); // redirect 
+						}
+						else
+						{
+							header("Location: home.php"); // redirect 
+						}
+						
 					} 
 					else { 
 						$passwordError = 'Password is not valid'; 

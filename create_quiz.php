@@ -45,7 +45,7 @@
 		}
 		elseif(isset($_POST['back']))
 		{
-			header("Location: home.php"); 
+			header("Location: teacher_home.php"); 
 		}
 	}
 ?>

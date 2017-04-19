@@ -16,13 +16,9 @@ session_start();
 	echo $_SESSION['numOfQuestions'];
 	
     if ( !empty($_POST)) {
-		if(isset($_POST['takeQuiz']))
+		if(isset($_POST['viewResults']))
 		{
-			header("Location: take_quiz.php"); 
-		}
-		elseif(isset($_POST['compareResults']))
-		{
-			header("Location: index.php"); 
+			header("Location: teacher_results.php"); 
 		}
 		elseif(isset($_POST['editProfile']))
 		{
@@ -43,7 +39,7 @@ session_start();
 	}
 
 
-
+print_r($_SESSION);
 
 ?>
 <!DOCTYPE html>
@@ -57,9 +53,13 @@ session_start();
 <body>
 <div class="container">
 <div  class="row">
-	<div class="col-lg-2 col-xs-1"></div>
+	<div class="col-lg-3 col-xs-1"></div>
 
-  <div class="col-lg-10 col-xs-11"><h1>Are you ready for the Ultimate Quiz?!</h1></div>
+  <div class="col-lg-9 col-xs-11">
+	<?php
+		echo "<h1>Welcome   ".$_SESSION['username']."!</h1>";
+	?>
+  </div>
 	</div>
 
 <br/>
@@ -68,18 +68,7 @@ session_start();
 <div class="row">
 <div class="col-lg-3 col-xs-3"></div>
 <div class="col-lg-9 col-xs-9">
-
-
-<button type="submit" name="takeQuiz" class="btn btn-success" style="height:40px; width:400px;">Take the Quiz</button>
-
-</div>
-</div>
-
-<br/>
-<div class="row">
-<div class="col-lg-3 col-xs-3"></div>
-<div class="col-lg-9 col-xs-9">
-<button type="submit" name="compareResults" class="btn btn-success" style="height:40px; width:400px;">Compare Results</button>
+<button type="submit" name="viewResults" class="btn btn-success" style="height:40px; width:400px;">View Students Results</button>
 
 </div>
 </div>
@@ -88,6 +77,22 @@ session_start();
 <div class="col-lg-3 col-xs-3"></div>
 <div class="col-lg-9 col-xs-9" >
 <button type="submit" name="editProfile" class="btn btn-success" style="height:40px; width:400px;">Edit  Profile</button>
+	
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9">
+<button type="submit" name="createQuiz" class="btn btn-success" style="height:40px; width:400px;">Create Quiz</button>
+	
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-lg-3 col-xs-3"></div>
+<div class="col-lg-9 col-xs-9">
+<button type="submit" name="manageQuiz" class="btn btn-success" style="height:40px; width:400px;">Manage Quiz</button>
 	
 </div>
 </div>

@@ -1,7 +1,7 @@
 <?php 
 	 session_start();
 	require 'database.php';
-
+	print_r($_SESSION);
 	$id = null;
 	echo $SESSIONS['test_taker_id'];
 	if ( !empty($_GET['id'])) {
@@ -59,7 +59,15 @@
 		}
 		else
 		{
-			header("Location: home.php"); 
+			if($_SESSION['teacher'] == 1)
+			{
+				header("Location: teacher_home.php");
+			}
+			else
+			{
+				header("Location: home.php");
+			}
+			 
 		}
 	} 
 	else {
