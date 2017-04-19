@@ -1,9 +1,9 @@
 <?php 
 	 session_start();
 	require 'database.php';
-	print_r($_SESSION);
+	
 	$id = null;
-	echo $SESSIONS['test_taker_id'];
+
 	if ( !empty($_GET['id'])) {
 		$id = $_SESSION['test_taker_id'];
 	}

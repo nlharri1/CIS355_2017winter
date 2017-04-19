@@ -9,11 +9,10 @@ session_start();
 	$q = $pdo->prepare($sql);
 	$q->execute();
 	$results = $q->fetch(PDO::FETCH_ASSOC); 
-	echo $results['Count'];
+	
 	Database::disconnect();
 	 $_SESSION['numOfQuestions'] = $results['Count'];
-	echo $_SESSION['questionPositon'] = 1;
-	echo $_SESSION['numOfQuestions'];
+
 	
     if ( !empty($_POST)) {
 		if(isset($_POST['takeQuiz']))

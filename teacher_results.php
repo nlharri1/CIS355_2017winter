@@ -42,7 +42,7 @@
 										}
 										else
 										{
-											echo "<h1 style='text-decoration: underline'>Quiz Results</h1>";	
+											echo "<h1 style='text-decoration: underline'>Choose a student to view quiz</h1>";	
 										}	
 																	
 							?>
@@ -59,7 +59,7 @@
 									
 									$pdo = Database::connect();
 									$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-									$sql = "SELECT test_taker_id, first_name, last_name FROM Test_Takers WHERE teacher = 0 ORDER BY first_name DESC";
+									$sql = "SELECT test_taker_id, first_name, last_name FROM Test_Takers WHERE teacher = 0 ORDER BY first_name ASC";
 									$q = $pdo->prepare($sql);
 									$q->execute();
 									$results = $q->fetchALL(PDO::FETCH_ASSOC); 
@@ -100,7 +100,7 @@
 											echo "<h4>Question ".$rows['question_id'].": ".$rows['question_name']."</h4>";
 											echo "<br/>";
 											echo "<h4>Answer: ".$rows['question_answer']."</h4>";				
-											echo "<h4> Thier Answer: ".$rows['response']."</h4>";	
+											echo "<h4> Their Answer: ".$rows['response']."</h4>";	
 											echo "<hr>";	
 											echo "<br/>";										
 										}
@@ -116,18 +116,19 @@
 					<br/>
 					<br/>
 					<br/>
-		
+					<br/>
 								
 					<br/>
 					<div class="row">
 
-						<div class="col-lg-5  col-xs-3"></div>
+						<div class="col-lg-6  col-xs-3"></div>
 						
 					  <div class="form-actions">
 					   <div class="col-lg-2 col-xs-9">
 						  <button type="submit" name="back"class="btn btn-success" style="height:30px; width:200px;">Back</button>
 						</div>
 						</div>
+						<div class="col-lg-4  col-xs-3"></div>
 					</div>  
 					</form>
 				<br/>
