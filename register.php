@@ -18,7 +18,7 @@ if(isset($_POST['register_btn']))
             mysqli_query($db,$sql);  
             $_SESSION['message']="You are now logged in"; 
             $_SESSION['username']=$username;
-            header("location:home.php");  //redirect home page
+            header("location:index.php");  //redirect home page
     }
     else
     {
