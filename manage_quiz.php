@@ -116,8 +116,8 @@
 						</div>
 						<br/>
 					 <div class="row">
-							<div class="col-lg-4 col-xs-3"></div>
-							<div class="col-lg-8 col-xs-9">
+							<div class="col-lg-2 col-xs-3"></div>
+							<div class="col-lg-10 col-xs-9">
 							<?php
 									$pdo = Database::connect();
 									$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

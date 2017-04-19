@@ -12,7 +12,7 @@ session_start();
 	
 	Database::disconnect();
 	 $_SESSION['numOfQuestions'] = $results['Count'];
-
+	 $_SESSION['questionPositon'] = 1;
 	
     if ( !empty($_POST)) {
 		if(isset($_POST['takeQuiz']))

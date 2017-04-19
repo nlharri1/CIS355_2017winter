@@ -1,7 +1,7 @@
 <?php 
 	require 'database.php';
 		session_start();
-	
+
 	
 	if ( !empty($_POST)) 
 	{
