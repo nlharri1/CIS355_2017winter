@@ -116,7 +116,7 @@
 						
 					  <div class="form-actions">
 					  <div class="col-lg-9  col-xs-9">	
-						  <button type="submit" name="create" class="btn btn-success" style="height:30px; width:150px;">Subimt Answer</button>
+						  <button type="submit" name="create" class="btn btn-success" style="height:30px; width:150px;">Submit Answer</button>
 					  </div>
 						</div>
 					</div>
