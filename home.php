@@ -21,7 +21,7 @@ session_start();
 		}
 		elseif(isset($_POST['compareResults']))
 		{
-			header("Location: index.php"); 
+			header("Location: results.php"); 
 		}
 		elseif(isset($_POST['editProfile']))
 		{
@@ -78,7 +78,7 @@ session_start();
 <div class="row">
 <div class="col-lg-3 col-xs-3"></div>
 <div class="col-lg-9 col-xs-9">
-<button type="submit" name="compareResults" class="btn btn-success" style="height:40px; width:400px;">Compare Results</button>
+<button type="submit" name="compareResults" class="btn btn-success" style="height:40px; width:400px;">View Results</button>
 
 </div>
 </div>

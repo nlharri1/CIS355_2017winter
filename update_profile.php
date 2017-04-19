@@ -8,9 +8,6 @@
 		$id = $_SESSION['test_taker_id'];
 	}
 	
-	if ( null==$id ) {
-		header("Location: home.php");
-	}
 	
 	if ( !empty($_POST)) {
 		if(isset($_POST['update']))
@@ -54,7 +51,44 @@
 				$_SESSION['username'] = $username;
 				Database::disconnect();
 
-				header("Location: home.php");
+				if($_SESSION['teacher'] == 1)
+				{
+					header("Location: teacher_home.php");
+				}
+				else
+				{
+					header("Location: home.php");
+				}
+			}
+		}
+		elseif(isset($_POST['upload']) && $_FILES['userfile']['size']>0)
+		{
+			$fileName = $_FILES['userfile']['name'];
+			$tmpName  = $_FILES['userfile']['tmp_name'];
+			$fileSize = $_FILES['userfile']['size'];
+            $fileType = $_FILES['userfile']['type'];
+			$fileType = (get_magic_quotes_gpc()==0 
+			? mysql_real_escape_string($_FILES['userfile']['type'])
+			: mysql_real_escape_string(stripslashes ($_FILES['userfile'])));
+			$fp       = fopen($tmpName, 'r');
+			$content  = fread($fp, filesize($tmpName));
+			$content  = addslashes($content);
+
+			fclose($fp);
+			if (! get_magic_quotes_gpc() )
+			{
+				$fileName = addslashes($fileName);
+			}
+			$con = mysql_connect("localhost","nlharri1","537858") 
+			or die(mysql_error());
+			$db  = mysql_select_db('nlharri1',$con);
+			if($db)
+			{
+				$query = "INSERT INTO Upload (test_taker_id,name, size, type, content) ".
+				"VALUES ($id,'$fileName', '$fileSize', '$fileType', '$content')";
+				mysql_query($query) or die('Error... query failed!');
+				mysql_close();
+				
 			}
 		}
 		else
@@ -70,7 +104,6 @@
 			 
 		}
 	} 
-	else {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql = "SELECT * FROM Test_Takers where test_taker_id = ?";
@@ -81,7 +114,6 @@
 			$last_name = $result['last_name'];
 			$username = $result['username'];
 			Database::disconnect();
-		}
 ?>
 
 
@@ -102,7 +134,51 @@
 						<div class="col-lg-12" style="text-align:center;">
 							<h1>Update Profile</h1>
 						</div>
+		    		</div> 	
+    				<div class="row">
+
+						<div class="col-lg-12" style="text-align:center;">
+												<?php
+
+  $id = $_GET['id'];
+  // do some validation here to ensure id is safe
+
+ $con = mysql_connect("localhost","nlharri1","537858") 
+			or die(mysql_error());
+			$db  = mysql_select_db('nlharri1',$con);
+  $sql = "SELECT content FROM Upload WHERE test_taker_id=".$id;
+  $result = mysql_query($sql);
+  $row = mysql_fetch_assoc($result);
+  mysql_close();
+
+  
+  echo '<img src="data:image/jpeg;base64,'.base64_encode($row['content']).'"/>';
+?>
+						</div>
 		    		</div> 		
+    				<div class="row">
+
+						<div class="col-lg-5"></div>
+						
+				<div class="col-lg-4">						
+					<form method="post" enctype="multipart/form-data">
+						<table width="350" border="0" 
+						cellpadding="1" cellspacing="1" class="box">
+						<tr><td>Select a File</td></tr>
+						<tr><td>
+						<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+						<input name="userfile" type="file" id="userfile">
+						</td></tr>
+						<tr>
+						<td width="80">
+						<input name="upload" type="submit" class="box" id="upload"  value=" Upload ">
+						</td>
+						</tr>
+					</table>
+					</form>
+				</div>
+				<div class="col-lg-3"></div>
+				</div>
 	    			<form class="form-horizontal"  method="post">
 					<div class="row">
 						<div class="col-lg-5"></div>
