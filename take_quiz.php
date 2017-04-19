@@ -37,7 +37,7 @@
 				
 				if($_SESSION['questionPositon'] > $_SESSION['numOfQuestions'])
 				{
-					header("Location: results.php");
+					header("Location: home.php");
 				}
 			}
 			else
